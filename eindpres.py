@@ -67,7 +67,7 @@ top10 = dataframe[dataframe["placenew"].str.contains("Papua New Guinea|Indonesia
 
 # In[7]:
 
-
+st.subheader('In deze blog wordt er geinspecteerd hoeveel aardbevingen er zijn voorgekomen in de afgelopen 100 jaar, ook wordt er bestudeerd hoe aardbevingen en de frequentie ervan veranderd is')
 st.subheader('hieronder een boxplot met de magnitude per land') 
 
 
