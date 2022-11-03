@@ -33,7 +33,7 @@ from streamlit_folium import folium_static
 color_map = ["cyan", "darkcyan", "cornflowerblue"] 
 st.title('2022-2023 sem-1 Eind presentatie: aardbevingen')
 st.header('Eindpresentatie')
-st.subheader(' Team 27?: Tuncay, Umut, Serhat, Jullian') 
+st.subheader(' Team 27?: Tuncay, Umut, Serhat,bob') 
 
 
 # In[3]:
@@ -232,10 +232,10 @@ newdf = dataframe["placenew"].value_counts()
 newdf.head(15)
 
 
-# In[27]:
+# In[71]:
 
 
-stad = st.text_input('stad', 'korkuteli')
+stad = st.text_input('stad', 'kayseri')
 api_key = "885ad48647fcd8f54a243936ff054f13"
 ## bron API dataset : https://openweathermap.org
 city_name = stad 
@@ -258,7 +258,7 @@ temp = data['main']['temp']
 print(name, lon, lat, temp)
 
 
-# In[28]:
+# In[72]:
 
 
 map = folium.Map(location=[lat, lon],zoom_start=10)
@@ -312,7 +312,7 @@ df1.columns
 df1.reset_index()
 
 
-# In[33]:
+# In[58]:
 
 
 #relevant = df1["placenew"] > 20
@@ -320,26 +320,29 @@ df1.reset_index()
 relevant = df1[df1['placenew'] >= 20]
 
 
-# In[34]:
+# In[59]:
 
 
-relevant.head(10)
+
+relevant
 
 
-# In[35]:
+# In[55]:
 
 
 st.subheader('barplot met aantal aardbevingen per land')
 
 
-# In[36]:
+# In[66]:
 
 
-relevant.plot.bar()
-#fig_bar, ax = plt.subplots()
-#ax.bar(relevant,) 
-#plt.show()
-#st.pyplot(fig_bar)
+#Boxplot om outliers te bepalen.
+fig_bar = px.bar(relevant, y="placenew",
+                labels={ # replaces default labels by column name
+                "placenew": "aantal aardbevingen",  "index": "land",
+            }, title= "aantal aardbevingen per land")
+fig_bar.show()
+st.plotly_chart(fig_bar)
 
 
 # In[37]:
@@ -452,7 +455,7 @@ fig_.show()
 st.plotly_chart(fig_)
 
 
-# In[42]:
+# In[68]:
 
 
 import plotly.express as px
@@ -468,27 +471,16 @@ print(results)
 resultsF = results.iloc[0]["px_fit_results"].summary()
 
 
-# In[ ]:
+# In[69]:
 
 
 st.write("The R-Squared value is ",RSQ)
 print("The R-Squared value is ",RSQ)
 
 
-# In[ ]:
+# In[70]:
 
 
 st.write(resultsF)
 print(resultsF)
-
-
-# In[ ]:
-
-
-#print("Vul hieronder het jaar in, en ons model maakt een verwachte 'forecast' met aantal aardbevingen")
-#x = input()
-#
-#formula = -1.393e+04 + x * 7.3603
-#
-        
 
