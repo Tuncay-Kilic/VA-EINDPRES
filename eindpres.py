@@ -461,8 +461,8 @@ df = px.data.tips()
 fig_tren = px.scatter(jaar, x="Date", y="sum", trendline="ols")
 fig_tren.show()
 
-results = px.get_trendline_results(fig)
-RSQ = px.get_trendline_results(fig).px_fit_results.iloc[0].rsquared
+results = px.get_trendline_results(fig_tren)
+RSQ = px.get_trendline_results(fig_tren).px_fit_results.iloc[0].rsquared
 print(results)
 
 resultsF = results.iloc[0]["px_fit_results"].summary()
