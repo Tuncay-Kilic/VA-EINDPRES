@@ -324,7 +324,7 @@ relevant = df1[df1['placenew'] >= 20]
 
 
 
-relevant
+relevant.head()
 
 
 # In[55]:
@@ -355,7 +355,7 @@ dataframe['Date'] = pd.to_datetime(dataframe['Date'])
 
 
 jaar=dataframe.groupby(dataframe['Date'].dt.year)['mag'].agg(['sum', 'mean', 'max']).reset_index()
-jaar
+jaar.head()
 
 
 # In[39]:
