@@ -33,7 +33,7 @@ from streamlit_folium import folium_static
 color_map = ["cyan", "darkcyan", "cornflowerblue"] 
 st.title('2022-2023 sem-1 Eind presentatie: aardbevingen')
 st.header('Eindpresentatie')
-st.subheader(' Team 27?: Tuncay, Umut, Serhat') 
+st.subheader('Tuncay, Umut, Serhat') 
 
 
 # In[3]:
