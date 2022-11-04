@@ -138,7 +138,7 @@ top10x.head()
 # In[15]:
 
 
-st.subheader('hieronder een scatterplot') 
+st.subheader('Vergelijkinsdiagram') 
 
 
 # In[16]:
