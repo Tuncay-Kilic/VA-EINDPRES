@@ -4,7 +4,7 @@
 # ### Eindpresentatie, Serhat_Kokcu-500858425-Tuncay-Kilic-500827104,Umut-Demirtas-500837354
 
 # In[1]:
-
+#hihihihahaha ik stond erbij en ik keek erna
 
 import pandas as pd
 import requests
